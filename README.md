@@ -74,7 +74,28 @@ Your DNS service is securely running and protected against external and unauthor
 
 ---
 
+## Apache SSL Setup Script (`apache_ssl.sh`)
 
+**Purpose:**
+Installs Apache web server, enables SSL, and generates a Certificate Signing Request (CSR) to obtain an official SSL certificate from the provided NCAE Cyber Games CA server.
+
+**When and Where to Use:**
+- Only use on your dedicated Web Server machine (e.g., 192.168.t.5).
+- Run once at competition start after initial server configuration and before scoring checks.
+
+**After running:**
+- Apache is installed with SSL enabled.
+- CSR (team.csr) is generated—upload this immediately to the CA server provided by the competition.
+- Manually complete SSL configuration once you receive your certificate.
+
+**Final Quick Checklist After Running `apache_ssl.sh`:**
+- Apache installed, running, and enabled
+- SSL module enabled
+- CSR generated (team.csr) and submitted to CA server
+- Certificate (team.crt) received and configured in Apache manually afterward
+- SSL secured site accessible on HTTPS port 443
+
+---
 
 
 
