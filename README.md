@@ -38,7 +38,7 @@ Certain scripts require manual changes (such as usernames, passwords, and IP add
 **Run each script with sudo privileges:**
 ``sudo ./script_name.sh``
 
-## Review script-specific documentation carefully before executing.
+## 🚩 Review script-specific documentation carefully before executing.
 
 ---
 
@@ -47,7 +47,7 @@ Certain scripts require manual changes (such as usernames, passwords, and IP add
 **Purpose:**
 Quickly creates secure user accounts for your entire team and immediately locks down SSH by disabling root login, enforcing user permissions, and installing fail2ban.
 
-**Important:**
+🚩 **Important:**
 You must edit the usernames and passwords in the script (`ssh_setup.sh`) before executing it.
 Example section you must edit:
 - ["webpro"]="NewStrongPassword1"
