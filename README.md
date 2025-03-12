@@ -116,3 +116,53 @@ Installs and securely configures the FTP server software (vsftpd) quickly, disab
 
 ---
 
+## Cowrie Honeypot Setup Script (`cowrie_honeypot.sh`)
+**Purpose:**
+The Cowrie honeypot is designed to distract and mislead attackers (Red Team). It imitates an SSH server to attract malicious activity, capturing attacker interactions and logging attempted usernames, passwords, and commands for later analysis.
+
+**When and Where to Use:**
+- Where: Run ONLY on a dedicated, isolated honeypot server (e.g., an isolated VM on external subnet, such as 172.18.13.100).
+- When: Immediately at the beginning of the competition, after basic networking setup and before opening external firewall rules on the MikroTik router.
+
+**How to Run the Honeypot Script:**
+Make the script executable:
+**Execution Instructions:**
+- `chmod +x cowrie_honeypot.sh`
+- `sudo ./cowrie_honeypot.sh`
+
+**What this script does:**
+- Installs necessary dependencies (python3, pip, git, etc.).
+- Clones the latest Cowrie repository.
+- Sets up a virtual environment.
+- Installs Cowrie's Python dependencies.
+- Starts Cowrie honeypot service.
+
+**Post-installation Checks:**
+Verify Cowrie honeypot is running correctly:
+- `pgrep -f "twistd -n cowrie"`
+
+**Cowrie logs (important for monitoring attacker activity):**
+- `~/cowrie/var/log/cowrie/cowrie.log`
+
+**Restart or manage Cowrie service manually (if needed):**
+cd ~/cowrie
+sudo bin/cowrie restart
+sudo bin/cowrie stop
+sudo bin/cowrie start
+
+**MikroTik Router Firewall Rules to Forward Attackers to Honeypot:**
+Make sure the MikroTik router is configured to forward traffic on common attacker ports directly to the honeypot IP (172.18.13.100) or Ubuntu server:
+`/ip firewall nat add chain=dstnat protocol=tcp dst-port=22 action=dst-nat to-addresses=172.18.13.100`
+
+**Important Security Note:**
+- Do NOT run this script on your actual production servers (Web, DNS, FTP, DB).
+- The honeypot server must remain isolated from your real internal network.
+
+**Quick Final Checklist after running cowrie_honeypot.sh:**
+- Cowrie installed successfully.
+- Honeypot running and operational.
+- MikroTik NAT rules forwarding SSH attacks (port 22) to honeypot IP.
+- Logs actively being monitored for attacker activities.
+
+---
+
