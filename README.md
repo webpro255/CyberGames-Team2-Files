@@ -97,5 +97,22 @@ Installs Apache web server, enables SSL, and generates a Certificate Signing Req
 
 ---
 
+## FTP Server Setup Script (`ftp_setup.sh`)
+**Purpose:**
+Installs and securely configures the FTP server software (vsftpd) quickly, disabling anonymous access and securely restricting local users to their home directories.
 
+**When and Where to Use:**
+- Only run on your dedicated FTP server (often the Web or separate FTP server).
+- Execute once, immediately after initial server setup at the start of competition.
+
+**Execution Instructions:**
+- `chmod +x ftp_setup.sh`
+- `sudo ./ftp_setup.sh`
+
+**Security Settings Configured by This Script:**
+- Disables anonymous FTP login (`anonymous_enable=NO`)
+- Enables secure local-user login with write permissions
+- Restricts users securely (`chroot_local_user=YES`)
+
+---
 
