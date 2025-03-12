@@ -1,13 +1,13 @@
-# 📗 MikroTik Router Security Playbook
+#  MikroTik Router Security Playbook
 
-## 🎯 Objective
+##  Objective
 Quickly secure and configure MikroTik Router at competition start.
 
-## 🚨 Default Credentials
+##  Default Credentials
 - Username: `admin`
 - Password: *(default blank)*
 
-## ✅ Step-by-Step Instructions:
+##  Step-by-Step Instructions:
 
 ### **Step 1: Access Router**
 - Open browser, enter router IP (usually `172.18.0.1`).
