@@ -28,7 +28,7 @@ Save file (`Ctrl+O`, then `Ctrl+X` to exit).
 `sudo systemctl restart sshd`
 
 
-## 🔎 Troubleshooting:
+##  Troubleshooting:
 - SSH connection refused: check firewall/router.
 - Can't log in after changes? Verify the config carefully or restart SSH.
 
