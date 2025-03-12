@@ -166,3 +166,55 @@ Make sure the MikroTik router is configured to forward traffic on common attacke
 
 ---
 
+## MySQL Secure Setup Script (mysql_secure.sh)
+**Purpose:**
+This script securely installs and configures the MySQL Database Server using industry-standard best practices, removing insecure defaults, disabling remote root logins, and hardening overall database security.
+
+**When and Where to Use:**
+- Where: Run ONLY on your dedicated MySQL Database Server (e.g., 192.168.t.12) or database server.
+- When: Execute immediately after server setup and networking configuration at the competition start.
+
+**What this script does:**
+- Installs the latest MySQL Server on Ubuntu.
+- Runs the built-in interactive tool mysql_secure_installation that:
+- Sets a secure MySQL root password.
+- Removes anonymous MySQL users.
+- Disallows root MySQL login from remote hosts.
+- Deletes the default/test databases.
+- Reloads MySQL privilege tables to apply changes immediately.
+
+**How to Execute the Script:**
+**Execution Instructions:**
+- `chmod +x mysql_secure.sh`
+- `sudo ./mysql_secure.sh`
+
+**Follow the interactive prompts carefully, answering securely and clearly:**
+- Set a strong root password.
+- Answer 'YES' to removing anonymous users, disabling remote root login, and deleting test databases.
+
+**After Script Execution Checklist:**
+- MySQL Server installed and running.
+- Root password set securely.
+- Remote root access disabled.
+- Anonymous MySQL users removed.
+- Test databases removed.
+- MySQL privileges reloaded.
+
+**Check MySQL service status quickly:**
+`sudo systemctl status mysql`
+
+**To log in locally to verify MySQL functionality:**
+`sudo mysql -u root -p`
+
+**Troubleshooting Common Issues:**
+- Forgot root MySQL password?
+Reset using:
+`sudo mysqladmin -u root password "YourNewSecurePassword"`
+
+**Unable to connect remotely as root:**
+This is by design for security purposes. Connect via secure SSH or local access.
+
+---
+
+
+
