@@ -1,9 +1,9 @@
-# 📗 Web (Apache) and FTP Server Security Playbook
+# Web (Apache) and FTP Server Security Playbook
 
-## 🎯 Objective
+## Objective
 Set up Web Server (Apache) with SSL certificate and secure FTP.
 
-## ✅ Web Server SSL Instructions:
+## Web Server SSL Instructions:
 
 ### **Step 1: Install Apache**
 `sudo apt update sudo apt install apache2 openssl -y sudo systemctl enable apache2`
