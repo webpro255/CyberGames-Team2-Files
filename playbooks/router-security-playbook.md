@@ -35,7 +35,7 @@ Go to Terminal:
 /system backup save name=team2-router-backup
 
 
-## 🔎 Troubleshooting & Common Issues:
+##  Troubleshooting & Common Issues:
 - Locked out accidentally? Reset and restart quickly.
 - Check firewall rules carefully if network not reachable.
 
