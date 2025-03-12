@@ -51,5 +51,30 @@ After script runs:
 
 ---
 
+## DNS Server Script (dns_setup.sh)
+
+**Purpose:**
+Installs and securely configures a DNS server (BIND9). This script should only be run on the DNS Server (typically designated as something like 192.168.t.8 in the competition setup).
+What it Does:
+
+- Installs BIND9 DNS server software.
+- Restricts DNS queries to your internal network only (192.168.0.0/24).
+- Disables DNS recursion and zone transfers (enhances security).
+
+**When to Use:**
+Only once, immediately after DNS server setup at the start of the competition.
+Do not run on other servers.
+
+**Execution Instructions:**
+- `chmod +x dns_setup.sh`
+- `sudo ./dns_setup.sh`
+
+**After running**
+Your DNS service is securely running and protected against external and unauthorized queries.
+
+---
+
+
+
 
 
