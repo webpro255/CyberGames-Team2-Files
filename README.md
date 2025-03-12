@@ -1,4 +1,47 @@
-# CyberGames-Team2-Files
+# NCAE Cyber Games 2025 - Blue Team 2 Repository
+
+This repository contains the official scripts and playbooks used by our team during the NCAE Cyber Games. These scripts will help us quickly secure and configure our network and servers.
+
+---
+
+## Important: Read Before Executing Any Script
+
+**Always carefully review each script before executing.**  
+Certain scripts require manual changes (such as usernames, passwords, and IP addresses). Instructions for required edits are clearly marked inside each script.
+
+**Important guidelines before running any script:**
+
+- Verify usernames and passwords carefully.
+- Double-check IP addresses and network configurations.
+- Run each script **only on its designated server**.  
+- Check the **"When and Where to Use"** instructions clearly stated below before executing each script.
+
+---
+
+## Quick Links to Each Script and Playbook
+
+- [SSH Setup Script (`ssh_setup.sh`)](#ssh-setup-script-ssh_setupsh)
+- [Firewall Setup Script (`firewall.sh`)](#firewall-setup-script-firewallsh)
+- [DNS Server Setup Script (`dns_setup.sh`)](#dns-server-script-dns_setupsh)
+- [Apache Web SSL Setup Script (`apache_ssl.sh`)](#apache-ssl-setup-script-apache_sslsh)
+- [FTP Server Setup Script (`ftp_setup.sh`)](#ftp-server-setup-script-ftp_setupsh)
+- [Cowrie Honeypot Setup Script (`cowrie_honeypot.sh`)](#cowrie-honeypot-setup-script-cowrie_honeypotsh)
+- [MySQL Secure Setup Script (`mysql_secure.sh`)](#mysql-secure-setup-script-mysql_securesh)
+
+---
+
+## 🚩 Execution Instructions (Common for All Scripts):
+
+**Make each script executable before running:**
+``chmod +x script_name.sh``
+
+**Run each script with sudo privileges:**
+``sudo ./script_name.sh``
+
+## Review script-specific documentation carefully before executing.
+
+---
+
 
 ## SSH Setup Script (ssh.sh)
 **Purpose:**
