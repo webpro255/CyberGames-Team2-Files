@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# SSH Key Setup Script for Team 17
-# - Creates 27 scoring users (with competition SSH key)
-# - Creates 7 team members (need to add public keys)
-# - Secures SSH by disabling password logins
-# - Ensures correct permissions
-# - Restarts SSH service
-
 echo "[+] Starting SSH Key Setup..."
 
 # Define users (27 scoring users + 7 team members)
@@ -40,7 +33,7 @@ declare -a USERS=(
     "jessi_combs"
     "andy_green"
     
-    # 7 Team Members (Add your team members here)
+    # 7 Team Member
     "team_member1"
     "team_member2"
     "team_member3"
@@ -53,7 +46,7 @@ declare -a USERS=(
 # Define Public Keys
 declare -A USER_KEYS
 
-# Competition Scoring Public Key (for 27 scoring users)
+# Competition Scoring Pub
 COMPETITION_KEY="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCcM4aDj8Y4COv+f8bd2WsrIynlbRGgDj2+q9aBeW1Umj5euxnO1vWsjfkpKnyE/ORsI6gkkME9ojAzNAPquWMh2YG+n11FB1iZl2S6yuZB7dkVQZSKpVYwRvZv2RnYDQdcVnX9oWMiGrBWEAi4jxcYykz8nunaO2SxjEwzuKdW8lnnh2BvOO9RkzmSXIIdPYgSf8bFFC7XFMfRrlMXlsxbG3u/NaFjirfvcXKexz06L6qYUzob8IBPsKGaRjO+vEdg6B4lH1lMk1JQ4GtGOJH6zePfB6Gf7rp31261VRfkpbpaDAznTzh7bgpq78E7SenatNbezLDaGq3Zra3j53u7XaSVipkW0S3YcXczhte2J9kvo6u6s094vrcQfB9YigH4KhXpCErFk08NkYAEJDdqFqXIjvzsro+2/EW1KKB9aNPSSM9EZzhYc+cBAl4+ohmEPej1m15vcpw3k+kpo1NC2rwEXIFxmvTme1A2oIZZBpgzUqfmvSPwLXF0EyfN9Lk= SCORING KEY DO NOT REMOVE"
 # Assign the competition key to all scoring users
 for user in "${USERS[@]:0:27}"; do
@@ -69,7 +62,7 @@ USER_KEYS["team_member5"]="FAKE_PUB_KEY_HERE"
 USER_KEYS["team_member6"]="FAKE_PUB_KEY_HERE"
 USER_KEYS["team_member7"]="FAKE_PUB_KEY_HERE"
 
-# Function to create users and set up SSH keys
+# create users and set up keys
 setup_user() {
     local USERNAME=$1
     local PUB_KEY=${USER_KEYS[$USERNAME]}
@@ -84,7 +77,7 @@ setup_user() {
     mkdir -p /home/$USERNAME/.ssh
     chmod 700 /home/$USERNAME/.ssh
 
-    # Add public key
+    # Add pub key
     if [[ ! -z "$PUB_KEY" ]] && [[ "$PUB_KEY" != "FAKE_PUB_KEY_HERE" ]]; then
         echo "$PUB_KEY" > /home/$USERNAME/.ssh/authorized_keys
         chmod 600 /home/$USERNAME/.ssh/authorized_keys
